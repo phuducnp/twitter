@@ -1,5 +1,7 @@
 class TweeetsController < ApplicationController
   before_action :set_tweeet, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  skip_before_action :verify_authenticity_token, only: [:destroy]
 
   # GET /tweeets
   # GET /tweeets.json
@@ -15,7 +17,7 @@ class TweeetsController < ApplicationController
 
   # GET /tweeets/new
   def new
-    @tweeet = Tweeet.new
+    @tweeet = current_user.tweeets.build
   end
 
   # GET /tweeets/1/edit
@@ -25,12 +27,13 @@ class TweeetsController < ApplicationController
   # POST /tweeets
   # POST /tweeets.json
   def create
-    @tweeet = Tweeet.new(tweeet_params)
+    @tweeet = current_user.tweeets.build(tweeet_params)
 
     respond_to do |format|
       if @tweeet.save
-        format.html { redirect_to @tweeet, notice: 'Tweeet was successfully created.' }
-        format.json { render :show, status: :created, location: @tweeet }
+        # format.html { redirect_to root_path, notice: 'Tweeet was successfully created.' }
+        # format.json { render :show, status: :created, location: @tweeet }
+        format.js { flash.now[:notice] = 'Tweeet was successfully created.' }
       else
         format.html { render :new }
         format.json { render json: @tweeet.errors, status: :unprocessable_entity }
@@ -57,8 +60,9 @@ class TweeetsController < ApplicationController
   def destroy
     @tweeet.destroy
     respond_to do |format|
-      format.html { redirect_to tweeets_url, notice: 'Tweeet was successfully destroyed.' }
-      format.json { head :no_content }
+      # format.html { redirect_to tweeets_url, notice: 'Tweeet was successfully destroyed.' }
+      # format.json { head :no_content }
+      format.js { flash.now[:notice] = 'Tweeet was successfully destroyed.' }
     end
   end
 

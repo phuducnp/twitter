@@ -1,9 +1,15 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Tweeet:</strong>
-  <%= @tweeet.tweeet %>
-</p>
-
-<%= link_to 'Edit', edit_tweeet_path(@tweeet) %> |
-<%= link_to 'Back', tweeets_path %>
+<div class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <h2 class="title">Tweeet detail</h2>
+        <p>
+          <strong>Tweeet:</strong><%= @tweeet.tweeet %>
+        </p>
+        <br>
+        <%= link_to 'Edit', edit_tweeet_path(@tweeet), class: 'button is-info is-focused' %>
+        <%= link_to 'Back', tweeets_path, class: 'button is-info is-focused' %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,3 @@
+$('form').trigger('reset')
+$('#tweeet').prepend('<%= escape_javascript(render @tweeet) %>');
+$('#flash').html('<%= j render partial: "shared/flash" %>');

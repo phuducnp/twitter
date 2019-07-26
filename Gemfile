@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 
 gem 'bulma-rails', '~> 0.7.5'
 gem 'simple_form', '~> 4.1'
