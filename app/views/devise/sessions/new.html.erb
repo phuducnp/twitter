@@ -2,7 +2,7 @@
 <section class="section">
   <div class="container">
     <div class="columns is-centered">
-      <div class="column is-4">
+      <div class="column is-5">
         <h2 class="title is-2">Log in</h2>
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
@@ -24,9 +24,22 @@
             </div>
           </div>
 
-          <%= f.button :submit, "Log in", class:"button is-info is-medium" %>
+          <%= f.button :submit, "Log in", class:"button is-info is-medium is-rounded" %>
         <% end %>
-        <br/>
+        <br>
+        <a class="fb button is-link is-rounded btn">
+          <span class="icon">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+          </span>
+          <span>Login with Facebook</span>
+        </a>
+        <a class="gg button is-danger is-rounded btn">
+          <span class="icon">
+            <i class="fa fa-google" aria-hidden="true"></i>
+          </span>
+          <span>Login with Google</span>
+        </a>
+        <hr>
         <%= render "devise/shared/links" %>
       </div>
     </div>

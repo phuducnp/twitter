@@ -1,14 +1,18 @@
-$(document).ready(function() {
-  $('.who').click(function() {
-    Swal.fire(
-      'Good job!',
-      'You clicked the button!',
-      'success'
-    )
-  })
-});
-
 $( document ).on('turbolinks:load', function() {
+  $('.fb').click(function() {
+    Swal.fire(
+      'Login with Facebook',
+      'Comming Soon...',
+      'warning'
+    )
+  });
+  $('.gg').click(function() {
+    Swal.fire(
+      'Login with Google',
+      'Comming Soon...',
+      'warning'
+    )
+  });
   $('body').on('click', '.del', function() {
     let link = $(this)
     Swal.fire({

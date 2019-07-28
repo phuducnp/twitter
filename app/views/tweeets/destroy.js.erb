@@ -1,2 +1,3 @@
 $('.box')[1].remove();
+$('.count').html('<%= current_user.tweeets.count %>')
 $('#flash').html('<%= j render partial: "shared/flash" %>');
