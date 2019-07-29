@@ -1,20 +1,13 @@
 <% flash.each do |type, msg| %>
-  <% if type == "notice" %>
-    <script >
-      Swal.fire({
-        title: '<%= msg %>',
+  <script>
+    Swal.fire({
+      title: '<%= msg %>',
+      <% if type == "notice" %>
         type: 'success',
-        timer: 1500
-      })
-    </script>
-  </div>
-  <% elsif type == "alert" %>
-    <script >
-      Swal.fire({
-        title: '<%= msg %>',
+      <% elsif type == "alert" %>
         type: 'alert',
-        timer: 1500
-      })
-    </script>
-  <% end %>
+      <% end %>
+      timer: 1500
+    })
+  </script>
 <% end %>

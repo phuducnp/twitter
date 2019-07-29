@@ -14,5 +14,6 @@
 //= require activestorage
 //= require jquery3
 //= require turbolinks
-//= require sweetalert
+//= require sweetalert.min
+//= require custom_sweetalert
 //= require_tree .
