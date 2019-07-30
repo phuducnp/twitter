@@ -27,12 +27,7 @@
           <%= f.button :submit, "Log in", class:"button is-info is-medium is-rounded" %>
         <% end %>
         <br>
-        <a class="fb button is-link is-rounded btn">
-          <span class="icon">
-            <i class="fa fa-facebook" aria-hidden="true"></i>
-          </span>
-          <span>Login with Facebook</span>
-        </a>
+        <%= render "devise/shared/social_login" %>
         <a class="gg button is-danger is-rounded btn">
           <span class="icon">
             <i class="fa fa-google" aria-hidden="true"></i>

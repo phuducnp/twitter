@@ -1,11 +1,4 @@
 $( document ).on('turbolinks:load', function() {
-  $('.fb').click(function() {
-    Swal.fire(
-      'Login with Facebook',
-      'Comming Soon...',
-      'warning'
-    )
-  });
   $('.gg').click(function() {
     Swal.fire(
       'Login with Google',
