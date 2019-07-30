@@ -2,16 +2,16 @@
   <article class="media">
     <div class="media-left">
       <figure class='image is-64x64'>
-        <%= gravatar_image_tag(tweeet.user.email, size: 64, alt: tweeet.user.name) %>
+        <img src=" <%= tweeet.user.image %>" alt="avatar">
       </figure>
     </div>
     <div class="media-content">
       <div class="content">
         <strong><%= tweeet.user.name %></strong><br>
-        <small><%= tweeet.user.username %></small><br>
+        <small><%= tweeet.user.email %></small><br>
         <p><%= tweeet.tweeet %></p>
       </div>
-      <% if user_signed_in? %>
+      <% if user_signed_in? && current_user == tweeet.user %>
         <nav class='level'>
           <div class="level-left is-mobile">
             <%= link_to tweeet, class: 'level-item' do %>

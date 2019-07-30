@@ -5,7 +5,11 @@
       <article class="media">
         <div class="media-left">
           <figure class="image is-64x64">
-            <%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name) %>
+            <% if current_user.image == nil %>
+              <%= gravatar_image_tag(current_user.email, size: 64, alt: current_user.name) %>
+            <% else %>
+              <img src=" <%= current_user.image %>" alt="avatar">
+            <% end %>
           </figure>
         </div>
         <div class="media-content">
